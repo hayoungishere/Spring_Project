@@ -7,7 +7,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="manager">
 
 	 <select id="managerOne" parameterType="String" resultType="storemanageVo">
-	 	select * from store_manage where manager_id=#{id}
+	 	select * from store_manage where manager_id=#{id} and manager_pwd=#{pwd}
 	 </select>
 	 
 	 

@@ -10,9 +10,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		order by no
 	</select>
 	
-	 <select id="managerOne" parameterType="String" resultType="storemanageVo">
-	 	select * from store_manage where id=#{id}
-	 </select>
 	 
 	 
 </mapper>

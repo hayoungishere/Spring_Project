@@ -12,11 +12,13 @@
 </head>
 <body>
 <form class="login" method="post" action="login_check.do">
-<h2>Welcome, User!</h2>
+<h2>Welcome, Manager!</h2>
 <p>Please log in</p>
-<input type="text" name="id" placeholder="User Id" />
+
+<input type="text" name="id" placeholder="User Name" />
 <input type="password" name="pwd" placeholder="Password" />
 <input type="submit" value="Log In" />
+
 </form>
 </body>
 </html>

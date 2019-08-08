@@ -10,59 +10,29 @@
 
 <title>메인화면</title>
 
- <!-- Bootstrap core CSS -->
-  <link href="resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom fonts for this template -->
-  <link href="resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+<%!public void setMenus(HttpSession session){	
+	session.setAttribute("dessert1", "dessert1");	
+	return;
+	}
 
-  <!-- Custom styles for this template -->
-  <link href="resources/css/agency.min.css" rel="stylesheet">
+%>
 
-</head>
-<body id="page-top">
+<script type="text/javascript">
+function selectItem(idx){
+	var itemName="dessert"+idx;
+	
+	var formId=document.getElementById("selectMenu");
+	document.getElementsByName('menuName')[0].value=itemName;
+	document.getElementsByName('redirName')[0].value="dessert";
+	
+	formId.action="setCartElement.do";
+	formId.submit()
+}
 
+</script>
+<%@ include file = "include/header.jsp" %>
 
-
-<!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">spring coffee</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-    	 <br><br>   Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav text-uppercase ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#Coffee">Coffee</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#Ade">Ade</a>
-          </li>
-<!--           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#Juice">Juice</a>
-          </li> -->
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#Dessert">Dessert</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#Tea">Tea</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#cart">Cart</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-
- 
   <!-- Portfolio Grid -->
   <section class="bg-light page-section" id="portfolio">
     <div class="container">
@@ -70,91 +40,97 @@
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase">Menu</h2>
           <h3 class="section-subheading text-muted">원하는 메뉴를 선택해주세요.</h3>
+             
+         <form name="selectMenu" id="selectMenu" method="post">
+         <input type="hidden" name="menuName"/>
+         <input type="hidden" name="redirName"/>
+         
+         </form>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4 col-sm-6 portfolio-item">
+        <div class="col-md-4 col-sm-6 portfolio-item" onclick="javascript:selectItem(1);">
           <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="resources/img/portfolio/01-thumbnail.jpg" alt="">
+            <img class="img-fluid" src="resources/img/portfolio/macaron.jpg" alt="">
           </a>
           <div class="portfolio-caption">
-            <h4>Threads</h4>
-            <p class="text-muted">Illustration</p>
+            <h4>마카롱</h4>
+            <p class="text-muted">&#8361;&nbsp;2,500</p>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 portfolio-item">
+         <div class="col-md-4 col-sm-6 portfolio-item" onclick="javascript:selectItem(2);">
           <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="resources/img/portfolio/02-thumbnail.jpg" alt="">
+            <img class="img-fluid" src="resources/img/portfolio/tiramisu.jpg" alt="">
           </a>
           <div class="portfolio-caption">
-            <h4>Explore</h4>
-            <p class="text-muted">Graphic Design</p>
+            <h4>티라미수</h4>
+            <p class="text-muted">&#8361;&nbsp;6,500</p>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 portfolio-item">
+       <div class="col-md-4 col-sm-6 portfolio-item" onclick="javascript:selectItem(3);">
           <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="resources/img/portfolio/03-thumbnail.jpg" alt="">
+            <img class="img-fluid" src="resources/img/portfolio/pancake.jpg" alt="">
           </a>
           <div class="portfolio-caption">
-            <h4>Finish</h4>
-            <p class="text-muted">Identity</p>
+            <h4>팬 케이크</h4>
+            <p class="text-muted">&#8361;&nbsp;6,500</p>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 portfolio-item">
+         <div class="col-md-4 col-sm-6 portfolio-item" onclick="javascript:selectItem(4);">
           <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="resources/img/portfolio/04-thumbnail.jpg" alt="">
+            <img class="img-fluid" src="resources/img/portfolio/cake2.jpg" alt="">
           </a>
           <div class="portfolio-caption">
-            <h4>Lines</h4>
-            <p class="text-muted">Branding</p>
+            <h4>롤 케이크</h4>
+            <p class="text-muted">&#8361;&nbsp;5,500</p>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 portfolio-item">
+       <div class="col-md-4 col-sm-6 portfolio-item" onclick="javascript:selectItem(5);">
           <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="resources/img/portfolio/05-thumbnail.jpg" alt="">
+            <img class="img-fluid" src="resources/img/portfolio/cupcake.jpg" alt="">
           </a>
           <div class="portfolio-caption">
-            <h4>Southwest</h4>
-            <p class="text-muted">Website Design</p>
+            <h4>머핀</h4>
+            <p class="text-muted">&#8361;&nbsp;3,000</p>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 portfolio-item">
+       <div class="col-md-4 col-sm-6 portfolio-item" onclick="javascript:selectItem(6);">
           <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="resources/img/portfolio/06-thumbnail.jpg" alt="">
+            <img class="img-fluid" src="resources/img/portfolio/tarate.jpg" alt="">
           </a>
           <div class="portfolio-caption">
-            <h4>Window</h4>
-            <p class="text-muted">Photography</p>
+            <h4>타르트</h4>
+            <p class="text-muted">&#8361;&nbsp;3,000</p>
           </div>
         </div>
       </div>

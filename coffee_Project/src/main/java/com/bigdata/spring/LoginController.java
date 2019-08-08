@@ -40,7 +40,7 @@ public class LoginController {
 	         session.setAttribute("id",loginID);
 	      }
 	      if(loginID !=null) {
-	         mav.setViewName("main");
+	         mav.setViewName("admin_mainpage");
 	         // 이동할 경로를 적어줌
 	      }else {
 	         mav.setViewName("login");

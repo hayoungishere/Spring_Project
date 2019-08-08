@@ -15,9 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MoveToIndexController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
-
-	
-	@RequestMapping("ade")
+	@RequestMapping("adeNtea")
 	public String moveToAde() {
 		
 		return "ade";
@@ -31,12 +29,12 @@ public class MoveToIndexController {
 	//@RequestMapping("login")
 	/*public String moveToLogin() {
 		return "login";
-	}*/
+	}
 	
 	@RequestMapping("tea")
 	public String moveToTea() {
 		return "tea";
-	}
+	}*/
 	
 	
 	@RequestMapping("index")
@@ -44,6 +42,14 @@ public class MoveToIndexController {
 
 	//model을 가지고 prefix+"home"+suffix로 보내라 
 	return "index";
+	///prefix+"home"+suffix
+	}
+	
+	@RequestMapping("cart")
+	public String moveToCart() {
+
+	//model을 가지고 prefix+"home"+suffix로 보내라 
+	return "cart";
 	///prefix+"home"+suffix
 	}
 }
