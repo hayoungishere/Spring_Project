@@ -18,7 +18,7 @@
 function win() {
 	//window.open("https://www.naver.com/", "", "");  //속성 지정하지 않은 기본창
 	
-     window.open("${path}/membership.do", "스탬프 적립하기", "width=650, height=600, top = 100, left = 650");
+     window.open("membership.do", "스탬프 적립하기", "width=650, height=600, top = 100, left = 650");
 
 	}
 	

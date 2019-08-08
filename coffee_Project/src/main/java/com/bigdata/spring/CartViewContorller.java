@@ -94,15 +94,9 @@ public class CartViewContorller {
 	
 	
 	@RequestMapping("membership.do")
-	public ModelAndView setStemp(@RequestParam String menuName, String redirName,
-			HttpSession httpSession, ModelAndView mav) {
-		httpSession.setAttribute(menuName, menuName);
-		
-		System.out.println("this is setCartElement, "+httpSession.getAttribute(menuName));
-		
-		//mav.setViewName(redirName);
-		return mav;
+	public String setStemp() {
+		System.out.println("membership called");
+		return "addStemp";
 	}
-	
 	
 }
