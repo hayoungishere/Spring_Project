@@ -1,0 +1,24 @@
+package com.bigdata.spring.member.dao;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.bigdata.spring.member.vo.MenuVO;
+
+@Repository
+public class MenuDAO implements MenuDAOImpl {
+
+	@Override
+	public List<MenuVO> menuList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public MenuVO viewMenu(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

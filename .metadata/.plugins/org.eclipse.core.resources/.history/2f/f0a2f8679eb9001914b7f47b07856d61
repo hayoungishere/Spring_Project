@@ -1,0 +1,227 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>주문확인</title>
+
+<link href="resources/css/cart.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto"
+   rel="stylesheet">
+         
+ <link rel="stylesheet"
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script type="text/javascript">
+
+function win() {
+	//window.open("https://www.naver.com/", "", "");  //속성 지정하지 않은 기본창
+	
+     window.open("${path}/login/login.do", "회원 확인창", "width=650, height=600, top = 100, left = 650");
+
+	}
+	
+function btnClicked(){
+	 var delConfirm = confirm('주문하시겠습니까?');
+	   if (delConfirm) {
+		   var form = document.orderForm;
+		    win();
+	      alert('주문완료 되었습니다. 잠시만 기다려주세요.');
+	      
+	   }
+	   else {
+	      alert('주문이 취소되었습니다.');
+	      
+	   }
+}
+
+</script>
+
+
+
+<%@ include file = "include/header.jsp" %>
+
+<body>
+	<section>
+		<form class="order" name="orderForm" action="" method="post">   
+		
+			<div class="shopping-cart">
+			  <!-- Title -->
+			  <div class="title">
+			    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+			 Shopping Bag
+			  </div>
+
+			    <c:if test="${m1_name ne null}">
+			        	     <div class="item">
+			 	      
+			 	    <div class="buttons"> 
+			 	         <!--delete button and favorite button-->
+			 	      <span class="delete-btn"></span>
+			 	      <span class="like-btn"></span>
+			 	    </div>
+			 	    <!--product image-->
+			 	    <div class="image">
+			 	      <img src="" />
+			 	    </div>
+			 	    <!--product name and description-->
+			 	    <div class="description">
+			 	      <span>${m1_name}</span>
+			 	      
+			 	    </div>
+			 	    <!-- +/- adjusting quantity buttons-->
+			 	    <div class="quantity">
+			 	      <button class="plus-btn" type="button" name="button">
+			 	       <i class="fa fa-plus" aria-hidden="true"></i>
+			 	      </button>
+			 	      <input type="text" name="name" value="1">
+			 	      <button class="minus-btn" type="button" name="button">
+			 	      <i class="fa fa-minus" aria-hidden="true"></i>
+			 	      </button>
+			 	    </div>
+			 	    <!--total price-->
+			 	    <div class="total-price">${m1_price}</div>
+			 	  </div>
+			    
+			    </c:if>
+			 
+			    <c:if test="${m2_name ne null}">
+			       	     <div class="item">
+			 	      
+			 	    <div class="buttons"> 
+			 	         <!--delete button and favorite button-->
+			 	      <span class="delete-btn"></span>
+			 	      <span class="like-btn"></span>
+			 	    </div>
+			 	    <!--product image-->
+			 	    <div class="image">
+			 	      <img src="" />
+			 	    </div>
+			 	    <!--product name and description-->
+			 	    <div class="description">
+			 	      <span>${m2_name}</span>
+			 	      
+			 	    </div>
+			 	    <!-- +/- adjusting quantity buttons-->
+			 	    <div class="quantity">
+			 	      <button class="plus-btn" type="button" name="button">
+			 	       <i class="fa fa-plus" aria-hidden="true"></i>
+			 	      </button>
+			 	      <input type="text" name="name" value="1">
+			 	      <button class="minus-btn" type="button" name="button">
+			 	      <i class="fa fa-minus" aria-hidden="true"></i>
+			 	      </button>
+			 	    </div>
+			 	    <!--total price-->
+			 	    <div class="total-price">${m2_price}</div>
+			 	  </div>
+			    
+			    </c:if>
+			 
+			    <c:if test="${m3_name ne null}">
+			        	     <div class="item">
+			 	      
+			 	    <div class="buttons"> 
+			 	         <!--delete button and favorite button-->
+			 	      <span class="delete-btn"></span>
+			 	      <span class="like-btn"></span>
+			 	    </div>
+			 	    <!--product image-->
+			 	    <div class="image">
+			 	      <img src="" />
+			 	    </div>
+			 	    <!--product name and description-->
+			 	    <div class="description">
+			 	      <span>${m3_name}</span>
+			 	      
+			 	    </div>
+			 	    <!-- +/- adjusting quantity buttons-->
+			 	    <div class="quantity">
+			 	      <button class="plus-btn" type="button" name="button">
+			 	       <i class="fa fa-plus" aria-hidden="true"></i>
+			 	      </button>
+			 	      <input type="text" name="name" value="1">
+			 	      <button class="minus-btn" type="button" name="button">
+			 	      <i class="fa fa-minus" aria-hidden="true"></i>
+			 	      </button>
+			 	    </div>
+			 	    <!--total price-->
+			 	    <div class="total-price">${m3_price}</div>
+			 	  </div>
+			    
+			    </c:if>
+			 
+			    <c:if test="${m4_name ne null}">
+			       	     <div class="item">
+			 	      
+			 	    <div class="buttons"> 
+			 	         <!--delete button and favorite button-->
+			 	      <span class="delete-btn"></span>
+			 	      <span class="like-btn"></span>
+			 	    </div>
+			 	    <!--product image-->
+			 	    <div class="image">
+			 	      <img src="" />
+			 	    </div>
+			 	    <!--product name and description-->
+			 	    <div class="description">
+			 	      <span>${m4_name}</span>
+			 	      
+			 	    </div>
+			 	    <!-- +/- adjusting quantity buttons-->
+			 	    <div class="quantity">
+			 	      <button class="plus-btn" type="button" name="button">
+			 	       <i class="fa fa-plus" aria-hidden="true"></i>
+			 	      </button>
+			 	      <input type="text" name="name" value="1">
+			 	      <button class="minus-btn" type="button" name="button">
+			 	      <i class="fa fa-minus" aria-hidden="true"></i>
+			 	      </button>
+			 	    </div>
+			 	    <!--total price-->
+			 	    <div class="total-price">${m4_price}</div>
+			 	  </div>
+			    
+			    </c:if>
+			 
+			    <c:if test="${m5_name ne null}">
+			        	     <div class="item">
+			 	      
+			 	    <div class="buttons"> 
+			 	         <!--delete button and favorite button-->
+			 	      <span class="delete-btn"></span>
+			 	      <span class="like-btn"></span>
+			 	    </div>
+			 	    <!--product image-->
+			 	    <div class="image">
+			 	      <img src="" />
+			 	    </div>
+			 	    <!--product name and description-->
+			 	    <div class="description">
+			 	      <span>${m5_name}</span>
+			 	      
+			 	    </div>
+			 	    <!-- +/- adjusting quantity buttons-->
+			 	    <div class="quantity">
+			 	      <button class="plus-btn" type="button" name="button">
+			 	       <i class="fa fa-plus" aria-hidden="true"></i>
+			 	      </button>
+			 	      <input type="text" name="name" value="1">
+			 	      <button class="minus-btn" type="button" name="button">
+			 	      <i class="fa fa-minus" aria-hidden="true"></i>
+			 	      </button>
+			 	    </div>
+			 	    <!--total price-->
+			 	    <div class="total-price">${m5_price}</div>
+			 	  </div>
+			    
+			    </c:if>
+		  <input type ="submit" value="order" onclick="javascript:btnClicked();">
+		
+			</div>		
+		
+		</form>              
+	</section>
+</body>
+</html>

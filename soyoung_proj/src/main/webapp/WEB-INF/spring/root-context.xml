@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+<!-- <bean id="homeController" class="com.bigdata.spring.HomeController"></bean> -->
+
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+		<property name="url" value ="jdbc:oracle:thin:@localhost:1521:xe"/>
+		<property name="username" value="bigdata"/>
+		<property name="password" value="bigdata"/>
+	</bean>
+	
+	<!-- <bean id="dataSource1" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		드라이버 클래스 이름이 변경됨
+		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
+		연결문자열에 log4jdbc가 추가됨
+		<property name="url" value="jdbc:log4jdbc:oracle:thin:@localhost:1521:xe" />
+		<property name="username" value="bigdata" />
+		<property name="password" value="bigdata" />
+	</bean> -->
+	
+	<!-- mybatis 사용 설정 factory -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<!-- DataSource dataSource1 = new DataSource();
+		     DataSource dataSource = dataSource1; -->
+		     								<!-- classpath=src/main/resource -->
+		<property name="configLocation" value="classpath:/mybatis-config.xml"/>
+		<property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"/>
+	</bean>
+	
+	<!-- mybatis 사용 설정 template -->
+	<bean id ="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"
+		destroy-method="clearCache">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
+	</bean>
+	
+	<!-- bean 객체 -->
+	<!-- 
+	
+	class SqlSession{
+		private SqlSessionFactory sqlSessionFactory;
+		public SqlSession(SqlSessionFactory sqlSessionFactory){
+			this.sqlSessionFactory = sqlSessionFactory; 
+		}
+	}
+	
+	class SqlSessionFactory {
+		private DataSource dataSource
+		Resource configLocation
+		Resource[] mapperLocations
+		
+		public DataSource setDataSource(DataSource dataSource){
+			this.dataSource = dataSource;
+		}
+	
+	}
+	
+	
+	
+	
+	 -->
+	
+	
+	
+</beans>
+  

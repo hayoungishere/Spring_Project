@@ -1,0 +1,46 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>멤버십 스탬프 적립하기</title>
+
+<script type="text/javascript">
+
+	
+	
+	function cancleBtnOnClick(){
+		//스탬프 적립안하고 결제완료
+		alert("결제완료. 잠시만 기다려주세요.");
+		
+		var form = document.getElementById("stempForm");
+		
+	    window.opener.location.href="";
+
+
+		window.close();
+	}
+	
+	function addStempBtnOnClick(){
+		//스탬프 적립하고 결제완료
+		alert("적립완료. 잠시만 기다려 주세요.");
+		
+		window.opener.location.href="main";
+		
+		window.close();
+	}
+</script>
+
+
+</head>
+<body>
+<form name="stempForm" action="" method="Post">
+<input type="text" name="phoneN" placeholder="전화번호를 입력해주세요."/>
+<input type="button" name="submit" value="적립하기" onclick="javascript:addStempBtnOnClick();"/>
+<input type="button" name="cancle" value="취소하기" onclick="javascript:cancleBtnOnClick();"/>
+</form>
+
+ 스탬프 적립하기
+</body>
+</html>

@@ -1,0 +1,19 @@
+package com.bigdata.spring.member.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.bigdata.spring.member.vo.StoreManageVO;
+
+@Service
+public class MenuService implements MenuServiceImpl {
+	
+	@Override
+	public List<StoreManageVO> MenuList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+}

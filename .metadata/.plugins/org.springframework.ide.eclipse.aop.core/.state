@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="team0"/>
+<aop-project name="sample"/>
+<aop-project name="spring01"/>
+<aop-project name="coffee_Project"/>
+<aop-project name="coffee"/>
+</aop-reference-model>

@@ -1,0 +1,10 @@
+package com.bigdata.spring.member.vo;
+
+public class MenuVO {
+	int idx;
+	String menu_name;
+	String ingredient_idxs;
+	String ingredient_amounts;
+	String price;
+	String categories;
+}

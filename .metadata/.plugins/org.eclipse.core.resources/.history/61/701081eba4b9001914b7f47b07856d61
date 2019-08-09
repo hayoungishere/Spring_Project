@@ -1,0 +1,108 @@
+package com.bigdata.spring;
+import java.util.*;
+
+import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.bigdata.spring.member.service.MenuService;
+import com.bigdata.spring.member.vo.MenuVO;
+
+@Controller
+public class CartViewContorller {
+
+	List<String> cartList = new ArrayList<String>();
+	
+	@Inject
+	MenuService menuService;
+	
+	
+	@RequestMapping("setCartElement.do")
+	public ModelAndView getCartElement(@RequestParam String menuName, String redirName,
+			HttpSession httpSession, ModelAndView mav) {
+		httpSession.setAttribute(menuName, menuName);
+		
+		System.out.println("this is setCartElement, "+httpSession.getAttribute(menuName));
+		
+		mav.setViewName(redirName);
+		return mav;
+	}
+	
+	@RequestMapping("getCartElement.do")
+	public ModelAndView getCartElement( HttpSession httpSession, ModelAndView mav) {
+		
+		//System.out.println("here is getCartElement");
+		
+		
+		List<String> menuNameList=new ArrayList<String>();
+		menuNameList.add("coffee");
+		menuNameList.add("ade");
+		menuNameList.add("dessert");
+		
+		List<Integer> storedMenu= new ArrayList<Integer>();
+		
+		for(int i=0; i<3; i++) {
+			for(int j=0; j<6; j++) {
+				String menuN=menuNameList.get(i)+Integer.toString(j+1);
+				if(httpSession.getAttribute(menuN) != null) {
+					int len=menuN.length();
+					String cate = menuN.substring(0, len-1);
+					String num=menuN.substring(len-1, len);
+					System.out.println(cate+"   d     "+num);
+					
+					int idx;
+					
+					if(cate.equals("coffee")) {
+						idx=0;
+						idx=idx+Integer.parseInt(num);
+					}else if(cate.equals("ade")) {
+						idx=6;
+						idx=idx+Integer.parseInt(num);
+					}else {
+						idx=12;
+						idx=idx+Integer.parseInt(num);
+					}
+					
+					System.out.println(menuN+idx);
+					storedMenu.add(idx);
+					mav.addObject("idx"+Integer.toString(idx),idx);
+				}else {
+					continue;
+				}
+			}
+		}
+		
+		List<MenuVO> menuList = menuService.MenuList(storedMenu);
+		
+		System.out.println("cartSize is "+menuList.size());
+		
+		mav.setViewName("cart");
+		mav.addObject("cartSize",menuList.size());
+		
+		for(int i=0; i<menuList.size(); i++) {
+			mav.addObject("m"+Integer.toString(i+1)+"_name",menuList.get(i).getMenu_name());
+			mav.addObject("m"+Integer.toString(i+1)+"_price", menuList.get(i).getPrice());
+		}
+		mav.addObject("data",menuList);
+		
+		return mav;
+	}
+	
+	
+	@RequestMapping("membership.do")
+	public String setStemp(@RequestParam String menuName, String redirName,
+			HttpSession httpSession, ModelAndView mav) {
+		httpSession.setAttribute(menuName, menuName);
+		
+		System.out.println("this is setCartElement, "+httpSession.getAttribute(menuName));
+		
+		//mav.setViewName(redirName);
+		return "addStemp";
+	}
+	
+	
+}

@@ -1,0 +1,47 @@
+package com.bigdata.spring;
+
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class MoveToIndexController {
+	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+
+	@RequestMapping("adeNtea")
+	public String moveToAde() {
+		
+		return "ade";
+	}
+	
+	@RequestMapping("dessert")
+	public String moveToDessert() {
+		return "dessert";
+	}
+	
+	//@RequestMapping("login")
+	/*public String moveToLogin() {
+		return "login";
+	}
+	
+	@RequestMapping("tea")
+	public String moveToTea() {
+		return "tea";
+	}*/
+	
+	
+	@RequestMapping("index")
+	public String moveToidx() {
+
+	//model을 가지고 prefix+"home"+suffix로 보내라 
+	return "index";
+	///prefix+"home"+suffix
+	}
+}

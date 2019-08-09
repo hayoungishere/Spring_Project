@@ -1,0 +1,10 @@
+package com.bigdata.spring.member.dao;
+
+import java.util.List;
+
+import com.bigdata.spring.member.vo.MembershipVO;
+import com.bigdata.spring.member.vo.MenuVO;
+
+public interface MenuDAOImpl {
+	public List<MenuVO> menuList();
+	public MenuVO viewMenu(String name);

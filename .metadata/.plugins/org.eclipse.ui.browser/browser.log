@@ -1,0 +1,16 @@
+
+7월 28, 2019 14:33:43.28 NEW SESSION
+7월 28, 2019 14:33:43.28 [5308:11404:0728/143343.284:ERROR:browser_process_sub_thread.cc(221)] Waited 14 ms for network service
+
+8월 07, 2019 12:28:37.22 NEW SESSION
+8월 07, 2019 12:28:37.22 [6876:12564:0807/122837.225:ERROR:platform_sensor_reader_win.cc(244)] NOT IMPLEMENTED
+8월 07, 2019 13:34:17.90 [6876:2024:0807/133417.904:ERROR:socket_stream.cc(219)] Closing stream with result -2
+8월 07, 2019 14:09:15.65 [6876:2024:0807/140915.655:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -106
+8월 07, 2019 14:09:23.51 [6876:2024:0807/140923.518:ERROR:connection_factory_impl.cc(413)] Failed to connect to MCS endpoint with error -105
+8월 07, 2019 16:40:46.09 [6876:1624:0807/164046.097:ERROR:audio_manager_base.cc(363)] Invalid audio output parameters received; using fake audio path: format: 0, channel_layout: 0, channels: 0, sample_rate: 0, frames_per_buffer: 0, effects: 0, mic_positions: 
+8월 07, 2019 16:41:11.46 [6876:1624:0807/164111.462:ERROR:audio_manager_base.cc(363)] Invalid audio output parameters received; using fake audio path: format: 0, channel_layout: 0, channels: 0, sample_rate: 0, frames_per_buffer: 0, effects: 0, mic_positions: 
+8월 07, 2019 16:41:22.44 [6876:1624:0807/164122.440:ERROR:audio_manager_base.cc(363)] Invalid audio output parameters received; using fake audio path: format: 0, channel_layout: 0, channels: 0, sample_rate: 0, frames_per_buffer: 0, effects: 0, mic_positions: 
+8월 07, 2019 16:53:50.32 [6876:11872:0807/165350.321:ERROR:CONSOLE(3410)] "Request Target.getTargetInfo failed. {"code":-32602,"message":"No target with given id found"}", source: chrome-devtools://devtools/bundled/shell.js (3410)
+8월 07, 2019 17:29:47.15 [6876:11872:0807/172947.157:ERROR:CONSOLE(3410)] "Request Target.getTargetInfo failed. {"code":-32602,"message":"No target with given id found"}", source: chrome-devtools://devtools/bundled/shell.js (3410)
+8월 07, 2019 17:44:22.59 [6876:1624:0807/174422.596:ERROR:audio_manager_base.cc(363)] Invalid audio output parameters received; using fake audio path: format: 0, channel_layout: 0, channels: 0, sample_rate: 0, frames_per_buffer: 0, effects: 0, mic_positions: 
+8월 07, 2019 18:20:51.72 [6876:2024:0807/182051.727:ERROR:browser_process_sub_thread.cc(221)] Waited 23 ms for network service

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=coffee_Project/D:\/JavaProject\/tomcat\/apache-tomcat-8.5.42\/lib\/catalina-tribes.jar&lt;org.apache.catalina.tribes(Member.class[Member" modifiers="1537" timestamp="1562288267279"/>
+<typeInfo handle="=coffee_Project/src\/main\/java&lt;com.bigdata.spring.member.service{MemberShipServiceImpl.java[MemberShipServiceImpl" modifiers="513" timestamp="1564627348216"/>
+<typeInfo handle="=coffee_Project/D:\/JavaProject\/tomcat\/apache-tomcat-8.5.42\/lib\/catalina-tribes.jar&lt;org.apache.catalina.tribes(MembershipListener.class[MembershipListener" modifiers="1537" timestamp="1562288267279"/>
+<typeInfo handle="=coffee_Project/src\/main\/java&lt;com.bigdata.spring.member.service{StoreManageServiceImpl.java[StoreManageServiceImpl" modifiers="513" timestamp="1564627314558"/>
+<typeInfo handle="=coffee_Project/src\/main\/java&lt;com.bigdata.spring.member.dao{StoreManageDAOImpl.java[StoreManageDAOImpl" modifiers="513" timestamp="1564627557663"/>
+<typeInfo handle="=coffee_Project/D:\/JavaProject\/tomcat\/apache-tomcat-8.5.42\/lib\/catalina.jar&lt;org.apache.catalina(Store.class[Store" modifiers="1537" timestamp="1562288267328"/>
+<typeInfo handle="=coffee_Project/src\/main\/java&lt;com.bigdata.spring.member.service{MenuServiceImpl.java[MenuServiceImpl" modifiers="513" timestamp="1565226409902"/>
+<typeInfo handle="=coffee_Project/src\/main\/java&lt;com.bigdata.spring.member.dao{MenuDAOImpl.java[MenuDAOImpl" modifiers="513" timestamp="1565226432326"/>
+</typeInfoHistroy>

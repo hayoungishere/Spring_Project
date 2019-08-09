@@ -1,0 +1,42 @@
+package com.bigdata.spring.member.dao;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.inject.Inject;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
+
+import com.bigdata.spring.member.vo.MenuVO;
+
+@Repository
+public class MenuDAO implements MenuDAOImpl {
+
+	@Inject
+	SqlSession sqlSession;
+	
+	@Override
+	public List<MenuVO> menuList(List<String> list) {
+		// TODO Auto-generated method stub
+		List<Map<String, String>> menuList = new ArrayList<Map<String,String>>();
+		
+		for(int i=0; i<list.size(); i++) {
+			Map<String, String> temp = new HashMap<String, String>();
+			String key = "key"+Integer.toString(i);
+			temp.put(key, list[i]);
+		}
+		
+		
+		return null;
+	}
+
+	@Override
+	public MenuVO viewMenu(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

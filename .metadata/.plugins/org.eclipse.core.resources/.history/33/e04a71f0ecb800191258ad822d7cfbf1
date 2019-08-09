@@ -1,0 +1,5 @@
+package com.bigdata.spring.member.dao;
+
+public class MenuDAO {
+
+}

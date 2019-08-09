@@ -1,0 +1,13 @@
+package com.bigdata.spring.member.dao;
+
+import java.util.List;
+
+import com.bigdata.spring.member.vo.MembershipVO;
+
+public interface MenuDAOImpl {
+	public List<MenuVO> memberList();
+	public void insertMember(MembershipVO mvo);
+	public MembershipVO viewMember(String name);
+	public void deleteMember(String no);
+	public void updaeMember(MembershipVO mvo);
+}

@@ -1,0 +1,184 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>주문확인</title>
+
+<link href="resources/css/cart.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto"
+   rel="stylesheet">
+         
+ <link rel="stylesheet"
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script type="text/javascript">
+function getItemJS(){
+	
+var elementItem = document.getElementById("cartItem1");
+elementItem.innerHTML = localStorage.getItem('coffee2');
+System.out.println("this is localStorage "+localStorage.getItem('coffee2'));
+
+
+}
+
+
+</script>
+
+
+
+<%@ include file = "include/header.jsp" %>
+
+</head>
+<body>
+<section>
+
+
+
+<form class="order">   
+
+<h1>hi</h1>
+
+<h3 id="cartItem1" name="cartItem1">cartItem</h3>
+
+
+<div class="shopping-cart">
+  <!-- Title -->
+  <div class="title">
+    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+ Shopping Bag
+  </div>
+  
+  <c:forEach var="i" begin="1" end="${cartSize}">
+
+     <div class="item">
+ 	      
+ 	    <div class="buttons"> 
+ 	         <!--delete button and favorite button-->
+ 	      <span class="delete-btn"></span>
+ 	      <span class="like-btn"></span>
+ 	    </div>
+ 	    <!--product image-->
+ 	    <div class="image">
+ 	      <img src="" />
+ 	    </div>
+ 	    <!--product name and description-->
+ 	    <div class="description">
+ 	      <span>${"m"+i+"_name"}</span>
+ 	      <p><c:out value="${i}" /></p>
+ 	    </div>
+ 	    <!-- +/- adjusting quantity buttons-->
+ 	    <div class="quantity">
+ 	      <button class="plus-btn" type="button" name="button">
+ 	       <i class="fa fa-plus" aria-hidden="true"></i>
+ 	      </button>
+ 	      <input type="text" name="name" value="1">
+ 	      <button class="minus-btn" type="button" name="button">
+ 	      <i class="fa fa-minus" aria-hidden="true"></i>
+ 	      </button>
+ 	    </div>
+ 	    <!--total price-->
+ 	    <div class="total-price">${m1_price}</div>
+ 	  </div>
+    
+    
+
+</c:forEach>
+
+
+  <!-- Product #1 -->
+ <!--  <div class="item">
+      
+    <div class="buttons"> 
+      <span class="delete-btn"></span>
+      <span class="like-btn"></span>
+    </div>
+    <div class="image">
+      <img src="" />
+    </div>
+
+    <div class="description">
+      <span>Chocolate</span>
+      <span>Christmas Tree</span>
+      <span>Cupcake</span>
+    </div>
+    <div class="quantity">
+      <button class="plus-btn" type="button" name="button">
+       <i class="fa fa-plus" aria-hidden="true"></i>
+      </button>
+      <input type="text" name="name" value="1">
+      <button class="minus-btn" type="button" name="button">
+      <i class="fa fa-minus" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="total-price">$549</div>
+  </div>
+ 
+  <div class="item">
+    <div class="buttons">
+      <span class="delete-btn"></span>
+      <span class="like-btn"></span>
+    </div>
+ 
+    <div class="image">
+      <img src="item-2.png" alt="" />
+    </div>
+ 
+    <div class="description">
+      <span>Maison Margiela</span>
+      <span>Future Sneakers</span>
+      <span>White</span>
+    </div>
+ 
+    <div class="quantity">
+      <button class="plus-btn" type="button" name="button">
+       <i class="fa fa-plus" aria-hidden="true"></i>
+      </button>
+      <input type="text" name="name" value="1">
+      <button class="minus-btn" type="button" name="button">
+       <i class="fa fa-minus" aria-hidden="true"></i>
+      </button>
+    </div>
+ 
+    <div class="total-price">$870</div>
+  </div>
+ 
+  <div class="item">
+    <div class="buttons">
+      <span class="delete-btn"></span>
+      <span class="like-btn"></span>
+    </div>
+ 
+    <div class="image">
+      <img src="item-3.png" alt="" />
+    </div>
+ 
+    <div class="description">
+      <span>Our Legacy</span>
+      <span>Brushed Scarf</span>
+      <span>Brown</span>
+    </div>
+ 
+    <div class="quantity">
+      <button class="plus-btn" type="button" name="button">
+       <i class="fa fa-plus" aria-hidden="true"></i>
+      </button>
+      <input type="text" name="name" value="1">
+      <button class="minus-btn" type="button" name="button">
+<i class="fa fa-minus" aria-hidden="true"></i>
+      </button>
+    </div>
+ 
+    <div class="total-price">$349</div>
+
+  </div>-->
+  
+  <input type ="submit" value="order">
+
+
+
+</form>              
+</section>
+</body>
+</html>
